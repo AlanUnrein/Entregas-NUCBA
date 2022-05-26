@@ -16,14 +16,14 @@
 }
 
 /* Header */
-
    
 .header {
-    position: relative;
+    gap: 1.5rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 11rem;
     width: 100%;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
@@ -33,20 +33,13 @@
 
 /* Logo */
 
-.logo a {
-    display: flex;
-    align-items: center;
-}
-
 .logo img {
-    position: absolute;
-    /* no queria poner ese position ahi pero el fondo del logo(que es transparente) se me superponia con el borde inferior, perdon */
-    max-height: 100%;
-    height: 150px;
+    max-height: 90%;
+    height: 5rem;
     width: auto;
-    margin-left: 5vw;
     background-color: transparent;
 }
+
 .logo img:hover {
     opacity: 60%;
     transition: .6s;
@@ -57,16 +50,13 @@
 
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     list-style: none;
-    margin-right: 5vw;
 }
 
 .navbar a {
-    padding: 0px 50px;
+    padding: 5px 1rem;
     color: rgba(255, 255, 255, 0.733);
-    font-size: 12px;
+    font-size: 15px;
     font-family: 'Roboto Serif', sans-serif;
     text-transform: capitalize;
     text-decoration: none;
@@ -77,11 +67,11 @@
     color: rgb(14, 213, 188);
     border-left:solid rgb(14, 213, 188) 1px;
     border-right: solid rgb(14, 213, 188) 1px;
-    /* transform: scale(1.4); no se por que no funca, en la img si lo hizo */
     font-size: 16px;
     transition: 1s;
     opacity: 100%; 
 }
+
 .navbar a:active {
     border-radius: 35px;
     border: none;
@@ -90,103 +80,63 @@
     color: white;
 }
 
-/* media queries */
-
-@media screen and (max-width: 720px) { 
-     .header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        }    
-         
-    .navbar {
-        margin-top: 50px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        } 
-    .navbar a {
-        padding: 0px 20px;
-    }
-    .logo a{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
-    .logo img {
-        margin-left: 0px;
-        margin-top: 40px;
-    }
-   }
-
-    
 /* Main */
+main {
+    background: rgb(3,65,57);
+    background: linear-gradient(90deg, rgba(3,65,57,1) 0%, rgba(5,11,22,1) 50%, rgba(63,5,34,1) 100%);
+}
 
 .main {
-    width: 100%;
-    height: 45em;
-    padding-top: 100px;
-    min-height: 100vh;
+    padding-top: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(200, 200, 200);
-
 }
+
+/* *Section 1  */
 .section1 {
-    position: sticky;
-    top: 100px;
-
-
-    background: rgb(3,65,57);
-    background: linear-gradient(90deg, rgba(3,65,57,1) 0%, rgba(5,11,22,1) 50%, rgba(63,5,34,1) 100%);
-    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
-    border: solid  1px black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60em;
-    height: 30em;
-    padding: 50px 50px;
-    border-radius: 18px;
+    border-radius: 20px;
 }
 .section1_text {
     color: white;
-    width: 35em;
-    height: 25em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 40px 40px;
-    gap: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    width: 80%;
 }
-
+.section1_img {
+    text-align: center;
+    max-width: 550px;
+}
 .section1_img img{
-    height: 25em;
-    width: 25em;
-    border-radius: 18px;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    border-radius: 60px;
 }
-
 .section1_text h1 {
     text-transform: capitalize;
     letter-spacing: -2px;
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: 900;
     font-family: 'Roboto Black', sans-serif;
 }
- .section1_text h2 {
-     letter-spacing: -1px;
-     font-size: 20px;
-     font-weight: 600;
-     font-family: 'Roboto Black', sans-serif;    
+.section1_text h2 {
+    padding-top: 25px;
+    letter-spacing: -1px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto Black', sans-serif;    
 }
 .section1_text p {
     line-height: 25px;
-    padding-top: 30px;
+    padding-top: 20px;
     font-style: italic;
     font-family: 'Roboto Serif', serif;
 }
@@ -199,23 +149,25 @@
 }
 
 /* Botones */
-
 .section1btns {
     padding-top: 30px;
     display: flex;
+    justify-content: center;
     align-items: center;
     font-family: 'Roboto Black', sans-serif;
     gap: 20px;
     font-weight: 600;
 }
- 
+
 .btn_edit {
+    width: 8rem;
+    text-align: center;
     background-color: white;
     padding: 8px 25px;
     border-radius: 40px;
     border: 1px rgb(0, 0, 0) solid;
- }
- 
+}
+
 .btn1 a{
     color: black;
     text-transform: uppercase;
@@ -242,35 +194,52 @@
     transition: .3s;
 }
 .btn_edit:hover {
-    background-color: rgba(63,5,34,1);
+    background-color: var(--celesteoscurologo);
     transform: scale(1.1);
     transition: .5s;
     border: solid 1px white;
 }
 
+/* Section2 */
+.section2 {
+    padding-bottom: 20vh ;
+    padding-top: 10vh;
+    text-align: center;
+    width: 70%;
+    font-size: 20px;
+    color: white;
+    
+}
+.section2 h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5rem;
+    
+}
+.section2 p{
+    line-height: 2rem;
+    margin-top: 3rem;
+    line-height: 25px;
+    padding-top: 20px;
+    font-style: italic;
+    font-family: 'Roboto Serif', serif;
+}
 
 /* logo flotante */
 
 .logohome img {
-   position: fixed;
-   height: auto;
-   width: 100px;
-   max-width: 5%;
-   max-height: auto;
-   bottom: 40px;
-   right: 1px;
+    position: fixed;
+    height: auto;
+    min-height: 50px;
+    width: 80px;
+    max-height: auto;
+    bottom: 40px;
+    right: 1rem;
 }
 .logohome img:hover{
     transition: .6s;
     transform: rotate(360deg);
 } 
-
-@media screen and (max-width: 720px) {
-    .logohome img {
-        display: none;
-    }
-}
-
 
 /* Footer */
 
@@ -279,15 +248,77 @@
     /* margin-top: 10vh; */
     background-color: rgb(0, 0, 0);
     height: 20vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--roboto);
-    font-size: 12px;
-
+    font-size: .8rem;
+    border-top: 1px white solid;
+    
 }
 .footer a {
     text-decoration: none;
-    color: var(--celestelogo);
-    
+    color: var(--celestelogo);  
 }
+
+
+/* * Media queries */
+
+@media screen and (min-width:1000px) {
+
+/* MEDIAQUERIES HEADER */
+
+    .header {
+        height: 7rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+    .navbar {
+        margin-right: 2rem;
+    }
+    .navbar a {
+        padding: 0px 4rem;
+        font-size: 14px;
+    }
+
+    /* MEDIAQUERIES MAIN */   
+    .section1 {
+        background: rgb(3,65,57);
+        background: linear-gradient(90deg, rgba(3,65,57,1) 0%, rgba(5,11,22,1) 50%, rgba(63,5,34,1) 100%);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        border: solid  1px black;
+        flex-direction: row;
+        width: 80%;
+        height: auto;  
+        gap: 1rem;
+    }
+    .section1_text {
+        padding: 30px;
+        width: 100%;
+        height: auto;
+        text-align: left;
+    }
+    .section1btns {
+        justify-content: flex-start;
+    }
+
+    }
+    /** Mediaqueries 600px */
+
+    @media screen and (max-width:600px) {
+        .logo img {
+            display: none;
+        }
+        .header {
+            flex-direction: row;
+            height: 5rem;
+        }
+        .main {
+            padding-top: 10rem;
+        }
+    }
+    
