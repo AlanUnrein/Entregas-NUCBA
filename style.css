@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    /* border: solid 1px yellow; */
 }
 
 :root {
@@ -13,6 +14,8 @@
     --roboto: 'Roboto Serif', sans-serif;
     --azullogo: #16033f;
     --celesteoscurologo: rgb(0, 86, 95);
+    --celestelogooscuro: rgb(3,65,57);
+    --rosalogooscuro: rgb(54, 4, 31);
 }
 
 /* Header */
@@ -30,6 +33,7 @@
     background-color: rgb(0, 0, 0);
     position: sticky;
     top: -7rem;
+    z-index: 3;
 }
 
 /* Logo */
@@ -185,7 +189,6 @@ main {
     background-color: var(--celesteoscurologo);
     transform: scale(1.1);
     border: solid 1px white;
-    
 }
 
 /* Section2 */
@@ -195,8 +198,7 @@ main {
     text-align: center;
     width: 70%;
     font-size: 20px;
-    color: white;
-    
+    color: white;  
 }
 .section2 h2 {
     font-weight: 600;
@@ -214,7 +216,9 @@ main {
     font-style: italic;
     font-family: 'Roboto Serif', serif;
 }
-/* Section 3 y 4 */
+
+
+/* Section 3 y 4 contenedor */
 
 .section3, .section4 {
     background: rgb(3,65,57);
@@ -225,57 +229,102 @@ main {
     border-radius: 20px;
     color: white;
     margin: 1rem;
-    padding: 2rem;
-
+    padding: 5rem 1rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.section3 h2, .section4 h2 {
-    padding-top: 3rem;
+
+/* Section 3 */
+
+.section3 h2 {
     font-size: 2.5rem;
     font-weight: 900;
     font-family: 'Roboto Black', sans-serif;
 }
-.section3 p, .section4 p{
+.section3 p{
     padding-top: 3rem;
     padding-bottom: 5rem;
     line-height: 25px;
     font-size: 1.5rem;
     font-family: 'Roboto Serif', serif;
-    width: 60%;
+    width: 75%;
 }
 
-/* section 3 y 4 listas */
+/* section 3 li */
 
-.section3list li, .section4list li{
+.section3list li{
+    background-color: var(--celestelogooscuro);
+    cursor: pointer;
+    margin: 2rem auto;
+    max-width: 80%;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    padding: 3rem 2rem 3rem 2rem;
-    text-align: center;
+    text-align: center;  
 }
 
-.section3list i, .section4list i {
+.section3list i {
     font-size: 10vw;
     padding: 1rem 0;
 }
-.section3list h3, .section4list h3 {
+.section3list h3{
     text-transform: uppercase;
     font-size: 2rem;
+    padding: 1rem 0;
 }
-.section3list p, .section4list p {
+.section3list p {
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 /* Section 4 */
+.section4 h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: 'Roboto Black', sans-serif;
+}
+.section4 p{
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    line-height: 25px;
+    font-size: 1.5rem;
+    font-family: 'Roboto Serif', serif;
+    width: 75%;
+}
 
+/* Section 4 li*/
+
+.section4list li{
+    background-color: rgb(54, 4, 31);
+    cursor: pointer;
+    margin: 2rem auto;
+    max-width: 80%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.section4list i {
+    font-size: 10vw;
+    padding: 1rem 0;
+}
+.section4list h3 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.section4list p {
+    font-style: italic;
+    font-size: 1.3rem;
+}
 .section4 {
     background-color: rgb(54, 4, 31);
     margin-bottom: 15vh;
@@ -285,21 +334,23 @@ main {
 /* ! Hover 3 y 4*/
 .section3list li:hover {
     transform: scale(1.1);
-    color: var(--celestelogo);
+    color: var(--celestelogooscuro);
     transition: .3s;
     border-radius: 20px;
     box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
         -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75); 
+    background-color: white;
 }
 .section4list li:hover {
     transform: scale(1.1);
-    color: var(--rosalogo);
+    color: var(--rosalogooscuro);
     transition: .3s;
     border-radius: 20px;
     box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
         -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+    background-color: white;
 }
 
 
@@ -397,6 +448,7 @@ main {
     }
     .section3list, .section4list {
         display: flex;
+        justify-content: baseline;
         align-items: baseline;
     }
     .section3list i, .section4list i {
@@ -405,13 +457,8 @@ main {
     .section4list h3 {
         font-size: 1.8rem;
     }
-    .section4list li:nth-child(3n) {
-        gap: .5rem;
-        padding-bottom: 0;
-    }
-        
-
-    }
+}
+   
     /** Mediaqueries 600px PHONE */
 
     @media screen and (max-width:360px) {
