@@ -12,7 +12,7 @@
     --celestelogo: #0ed5bc;
     --roboto: 'Roboto Serif', sans-serif;
     --azullogo: #16033f;
-    --celesteoscurologo: #00565f;
+    --celesteoscurologo: rgb(0, 86, 95);
 }
 
 /* Header */
@@ -28,7 +28,8 @@
     border-bottom: 1px solid white;
     border-top: 1px solid white;
     background-color: rgb(0, 0, 0);
-    position: fixed;
+    position: sticky;
+    top: -7rem;
 }
 
 /* Logo */
@@ -87,7 +88,7 @@ main {
 }
 
 .main {
-    padding-top: 20rem;
+    padding-top: 7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,45 +160,32 @@ main {
     font-weight: 600;
 }
 
-.btn_edit {
-    width: 8rem;
-    text-align: center;
+
+.btn1 a, .btn2 a{
+    display: inline-block;
+    color: black;
     background-color: white;
-    padding: 8px 25px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: bold;
+    
+    width: 9rem;
+    max-width: 90vw;
+    padding: 1rem 1.8rem;
     border-radius: 40px;
     border: 1px rgb(0, 0, 0) solid;
+    text-align: center;
 }
 
-.btn1 a{
-    color: black;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* boton contacto */
-
-.btn2 a{
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
-}
 
 /* Hover de botones */
-.btn1 a:hover {
+.btn1 a:hover, .btn2 a:hover {
     color: white;
     transition: .3s;
-}
-.btn2 a:hover {
-    color: white;
-    transition: .3s;
-}
-.btn_edit:hover {
     background-color: var(--celesteoscurologo);
     transform: scale(1.1);
-    transition: .5s;
     border: solid 1px white;
+    
 }
 
 /* Section2 */
@@ -211,6 +199,8 @@ main {
     
 }
 .section2 h2 {
+    font-weight: 600;
+    font-family: 'Roboto Black', sans-serif; 
     text-transform: uppercase;
     text-align: center;
     margin-top: 5rem;
@@ -224,6 +214,94 @@ main {
     font-style: italic;
     font-family: 'Roboto Serif', serif;
 }
+/* Section 3 y 4 */
+
+.section3, .section4 {
+    background: rgb(3,65,57);
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        border: solid  1px black;
+    border-radius: 20px;
+    color: white;
+    margin: 1rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.section3 h2, .section4 h2 {
+    padding-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: 'Roboto Black', sans-serif;
+}
+.section3 p, .section4 p{
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    line-height: 25px;
+    font-size: 1.5rem;
+    font-family: 'Roboto Serif', serif;
+    width: 60%;
+}
+
+/* section 3 y 4 listas */
+
+.section3list li, .section4list li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem 2rem 3rem 2rem;
+    text-align: center;
+}
+
+.section3list i, .section4list i {
+    font-size: 10vw;
+    padding: 1rem 0;
+}
+.section3list h3, .section4list h3 {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.section3list p, .section4list p {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Section 4 */
+
+.section4 {
+    background-color: rgb(54, 4, 31);
+    margin-bottom: 15vh;
+}
+
+
+/* ! Hover 3 y 4*/
+.section3list li:hover {
+    transform: scale(1.1);
+    color: var(--celestelogo);
+    transition: .3s;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+}
+.section4list li:hover {
+    transform: scale(1.1);
+    color: var(--rosalogo);
+    transition: .3s;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+}
+
 
 /* logo flotante */
 
@@ -263,7 +341,7 @@ main {
 }
 
 
-/* * Media queries */
+/* * Media queries DESKTOP*/
 
 @media screen and (min-width:1000px) {
 
@@ -305,11 +383,26 @@ main {
     .section1btns {
         justify-content: flex-start;
     }
+    .section3list, .section4list {
+        display: flex;
+        align-items: baseline;
+    }
+    .section3list i, .section4list i {
+        font-size: 5vw;
+    }
+    .section4list h3 {
+        font-size: 1.8rem;
+    }
+    .section4list li:nth-child(3n) {
+        gap: .5rem;
+        padding-bottom: 0;
+    }
+        
 
     }
-    /** Mediaqueries 600px */
+    /** Mediaqueries 600px PHONE */
 
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:360px) {
         .logo img {
             display: none;
         }
