@@ -361,7 +361,10 @@ main {
         font-size: 14px;
     }
 
+
     /* MEDIAQUERIES MAIN */   
+
+    /* Section 1 */
     .section1 {
         background: rgb(3,65,57);
         background: linear-gradient(90deg, rgba(3,65,57,1) 0%, rgba(5,11,22,1) 50%, rgba(63,5,34,1) 100%);
@@ -370,6 +373,8 @@ main {
         -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
         border: solid  1px black;
         flex-direction: row;
+
+        max-width: 3000px;
         width: 80%;
         height: auto;  
         gap: 1rem;
@@ -382,6 +387,13 @@ main {
     }
     .section1btns {
         justify-content: flex-start;
+    }
+
+
+    /* Section 3 y 4 */
+
+    .section3, .section4 {
+        width: 90%;
     }
     .section3list, .section4list {
         display: flex;
